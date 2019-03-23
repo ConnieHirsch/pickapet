@@ -4,6 +4,18 @@
   </div>
   <hr />
   <ul class="list-group">
-    <a class="list-group-item" style="cursor:pointer;"></a>
+    <a
+      class="list-group-item"
+      style="cursor:pointer;"
+      *ngFor="let shelter of shelters"
+    >
+      {{ shelter.name }}
+      <br />
+      {{ shelter.street }} {{ shelter.city }} {{ shelter.zip }}
+      <br />
+      {{ shelter.email }}
+      <br />
+      {{ shelter.phone }}
+    </a>
   </ul>
 </div>
