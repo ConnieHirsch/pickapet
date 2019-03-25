@@ -6,6 +6,7 @@
 <hr />
 <div class="row">
   <div class="col-xs-12">
-    <app-adoptees-item *ngFor="let adopteeChosen of adoptees" [adoptee]="adopteeChosen"></app-adoptees-item>
+    <app-adoptees-item *ngFor="let adopteeChosen of adoptees" [adoptee]="adopteeChosen"
+      (adopteeSelected)="onAdopteeSelected(adopteeChosen)"></app-adoptees-item>
   </div>
 </div>
