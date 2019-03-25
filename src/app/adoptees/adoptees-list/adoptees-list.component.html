@@ -6,28 +6,6 @@
 <hr />
 <div class="row">
   <div class="col-xs-12">
-    <a
-      href="#"
-      class="list-group-item clearfix"
-      *ngFor="let adoptee of adoptees"
-    >
-      <div class="pull-left">
-        <h4 class="list-group-item-heading">{{ adoptee.name }}</h4>
-        <p class="list-group-item-text">{{ adoptee.description }}</p>
-        <p class="list-group-item-text">Type: {{ adoptee.type }}</p>
-        <p class="list-group-item-text">Breed: {{ adoptee.breed }}</p>
-        <p class="list-group-item-text">Age: {{ adoptee.age }} years</p>
-      </div>
-      <span class="pull-right">
-        <img
-          src="{{ adoptee.imagePath }}"
-          alt="{{ adoptee.name }}"
-          title="{{ adoptee.name }}"
-          class="img-responsive"
-          style="max-height: 100px;"
-        />
-      </span>
-    </a>
-    <app-adoptees-item></app-adoptees-item>
+    <app-adoptees-item *ngFor="let adopteeChosen of adoptees" [adoptee]="adopteeChosen"></app-adoptees-item>
   </div>
 </div>

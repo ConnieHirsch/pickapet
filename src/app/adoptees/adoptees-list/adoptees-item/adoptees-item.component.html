@@ -1,3 +1,13 @@
-<p>
-  adoptees-item works!
-</p>
+<a href="#" class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ adoptee.name }}</h4>
+    <p class="list-group-item-text">{{ adoptee.description }}</p>
+    <p class="list-group-item-text">Type: {{ adoptee.type }}</p>
+    <p class="list-group-item-text">Breed: {{ adoptee.breed }}</p>
+    <p class="list-group-item-text">Age: {{ adoptee.age }} years</p>
+  </div>
+  <span class="pull-right">
+    <img src="{{ adoptee.imagePath }}" alt="{{ adoptee.name }}" title="{{ adoptee.name }}" class="img-responsive"
+      style="max-height: 100px;" />
+  </span>
+</a>
