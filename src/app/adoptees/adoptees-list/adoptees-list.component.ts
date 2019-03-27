@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { Adoptees } from '../adoptees.model';
+import { AdopteesService } from '../adoptees.service';
 
 @Component({
   selector: 'app-adoptees-list',
@@ -10,28 +11,13 @@ import { Adoptees } from '../adoptees.model';
 export class AdopteesListComponent implements OnInit {
   @Output() adopteeWasSelected = new EventEmitter<Adoptees>();
 
-  adoptees: Adoptees[] = [
-    new Adoptees(
-      'A Dogue',
-      'This is a new dogue entry',
-      'http://place-puppy.com/200x200',
-      'Dog',
-      'Mutt',
-      2
-    ),
-    new Adoptees(
-      'Kitty Deadpool',
-      'This is a new kitten entry',
-      'http://placekitten.com/200/300',
-      'Cat',
-      'House',
-      1
-    )
-  ];
+  adoptees: Adoptees[];
 
-  constructor() { }
+  constructor(private adopteesService: AdopteesService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.adoptees = this.adopteesService.getAdoptees();
+  }
 
   onAdopteeSelected(adoptee: Adoptees) {
     console.log('onAdopteeSelected');
