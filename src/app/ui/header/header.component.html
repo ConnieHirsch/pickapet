@@ -2,35 +2,23 @@
   <a class="navbar-brand" href="/">Pet Adoption Site</a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" href="#" (click)="onSelect('adoptee')"
-        >Adoptees</a
-      >
-      <a class="nav-item nav-link" href="#" (click)="onSelect('shelter')"
-        >Shelters</a
-      >
+      <a class="nav-item nav-link" href="#" (click)="onSelect('adoptee')">Adoptees</a>
+      <a class="nav-item nav-link" href="#" (click)="onSelect('shelter')">Shelters</a>
       <a class="nav-item nav-link" href="#">Contact</a>
     </div>
   </div>
   <div class="navbar-expand ml-auto navbar-nav">
     <div class="navbar-nav">
-      <a
-        class="nav-item nav-link"
-        href="https://github.com/beeman"
-        target="_blank"
-      >
+      <a class="nav-item nav-link" href="https://github.com/beeman" target="_blank">
         <i class="fa fa-github"></i>
       </a>
-      <a
-        class="nav-item nav-link"
-        href="https://twitter.com/beeman_nl"
-        target="_blank"
-      >
+      <a class="nav-item nav-link" href="https://twitter.com/beeman_nl" target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
+        <li class="dropdown open" appDropdown>
           <a href="#" class="dropdown-toggle" role="button">Data</a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu open" appDropdown>
             <li><a href="#">Save Data</a></li>
             <li><a href="#">Fetch Data</a></li>
           </ul>

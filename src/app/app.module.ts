@@ -10,6 +10,7 @@ import { AdopteesDetailComponent } from './adoptees/adoptees-detail/adoptees-det
 import { AdopteesItemComponent } from './adoptees/adoptees-list/adoptees-item/adoptees-item.component';
 import { ShelterListComponent } from './shelter-list/shelter-list.component';
 import { ShelterEditComponent } from './shelter-list/shelter-edit/shelter-edit.component';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ShelterEditComponent } from './shelter-list/shelter-edit/shelter-edit.c
     AdopteesItemComponent,
     ShelterListComponent,
     ShelterEditComponent,
-    AppComponent
+    AppComponent,
+    DropdownDirective
   ],
   imports: [BrowserModule, UiModule, FormsModule],
   providers: [],
