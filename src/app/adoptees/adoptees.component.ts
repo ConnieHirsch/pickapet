@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Adoptees } from './adoptees.model';
 
 @Component({
   selector: 'app-adoptees',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adoptees.component.css']
 })
 export class AdopteesComponent implements OnInit {
+  selectedAdoptee: Adoptees;
 
   constructor() { }
 

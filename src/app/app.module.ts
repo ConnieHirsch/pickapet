@@ -12,13 +12,13 @@ import { ShelterEditComponent } from './shelter-list/shelter-edit/shelter-edit.c
 
 @NgModule({
   declarations: [
-    AppComponent,
     AdopteesComponent,
     AdopteesListComponent,
     AdopteesDetailComponent,
     AdopteesItemComponent,
     ShelterListComponent,
-    ShelterEditComponent
+    ShelterEditComponent,
+    AppComponent
   ],
   imports: [BrowserModule, UiModule],
   providers: [],

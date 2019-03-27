@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Adoptees } from '../adoptees.model';
 
 @Component({
   selector: 'app-adoptees-detail',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./adoptees-detail.component.css']
 })
 export class AdopteesDetailComponent implements OnInit {
-
+  @Input() adoptee: Adoptees;
   constructor() { }
 
   ngOnInit() {

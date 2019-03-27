@@ -34,7 +34,7 @@ export class AdopteesListComponent implements OnInit {
   ngOnInit() { }
 
   onAdopteeSelected(adoptee: Adoptees) {
-    console.log("onAdopteeSelected");
+    console.log('onAdopteeSelected');
     this.adopteeWasSelected.emit(adoptee);
   }
 }
