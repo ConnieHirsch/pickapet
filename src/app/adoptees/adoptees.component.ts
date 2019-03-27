@@ -11,9 +11,16 @@ import { AdopteesService } from './adoptees.service';
 export class AdopteesComponent implements OnInit {
   selectedAdoptee: Adoptees;
 
-  constructor() { }
+  constructor(private adopteesService: AdopteesService) { }
+
 
   ngOnInit() {
+    this.adopteesService.adopteesSelected
+      .subscribe(
+        (adoptee: Adoptees) => {
+          this.selectedAdoptee = adoptee;
+        }
+      )
   }
 
 }

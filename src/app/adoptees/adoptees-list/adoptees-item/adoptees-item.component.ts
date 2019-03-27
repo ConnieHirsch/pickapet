@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Adoptees } from '../../adoptees.model';
+import { AdopteesService } from '../../adoptees.service';
 
 @Component({
   selector: 'app-adoptees-item',
@@ -8,15 +9,17 @@ import { Adoptees } from '../../adoptees.model';
 })
 export class AdopteesItemComponent implements OnInit {
   @Input() adoptee: Adoptees;
-  @Output() itemSelected = new EventEmitter<void>();
+  //@Output() itemSelected = new EventEmitter<void>();
 
-  constructor() { }
+  constructor(private adopteesService: AdopteesService) { }
 
   ngOnInit() {
   }
 
   onItemSelected() {
     console.log('onItemSelected');
-    this.itemSelected.emit();
+    this.adopteesService.adopteesSelected.emit(this.adoptee);
+    //this.itemSelected.emit();
+
   }
 }

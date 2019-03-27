@@ -1,6 +1,8 @@
 import { Adoptees } from './adoptees.model';
+import { EventEmitter } from '@angular/core';
 
 export class AdopteesService {
+  adopteesSelected = new EventEmitter<Adoptees>();
 
   private adoptees: Adoptees[] = [
     new Adoptees(
