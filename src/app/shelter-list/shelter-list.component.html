@@ -1,14 +1,10 @@
 <div class="row">
   <div class="col-xs-10">
-    <app-shelter-edit></app-shelter-edit>
+    <app-shelter-edit (shelterAdded)="onShelterAdded($event)"></app-shelter-edit>
   </div>
   <hr />
   <ul class="list-group">
-    <a
-      class="list-group-item"
-      style="cursor:pointer;"
-      *ngFor="let shelter of shelters"
-    >
+    <a class="list-group-item" style="cursor:pointer;" *ngFor="let shelter of shelters">
       {{ shelter.name }}
       <br />
       {{ shelter.street }} {{ shelter.city }} {{ shelter.zip }}

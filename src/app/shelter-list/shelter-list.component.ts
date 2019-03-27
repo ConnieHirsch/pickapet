@@ -37,7 +37,11 @@ export class ShelterListComponent implements OnInit {
     )
   ];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  onShelterAdded(shelter: Shelter) {
+    this.shelters.push(shelter);
+  }
 }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
@@ -20,7 +21,7 @@ import { ShelterEditComponent } from './shelter-list/shelter-edit/shelter-edit.c
     ShelterEditComponent,
     AppComponent
   ],
-  imports: [BrowserModule, UiModule],
+  imports: [BrowserModule, UiModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
