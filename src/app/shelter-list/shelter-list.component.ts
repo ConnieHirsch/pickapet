@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Shelter } from "../shared/shelter.model";
+import { ShelterListService } from './shelter-list.service';
 
 @Component({
   selector: "app-shelter-list",
@@ -7,41 +8,18 @@ import { Shelter } from "../shared/shelter.model";
   styleUrls: ["./shelter-list.component.css"]
 })
 export class ShelterListComponent implements OnInit {
-  shelters: Shelter[] = [
-    new Shelter(
-      "Greater Derry Humane Society",
-      "Some Street",
-      "Derry",
-      "NH",
-      "02144",
-      "555-555-5555",
-      "gdhs@gmail.com"
-    ),
-    new Shelter(
-      "Angel Memorial Shelter",
-      "Some Street",
-      "Boston",
-      "MA",
-      "02144",
-      "555-555-5555",
-      "angell@gmail.com"
-    ),
-    new Shelter(
-      "Mournful Paws",
-      "39 Sycamore Street",
-      "Somerville",
-      "MA",
-      "02143",
-      "555-555-5555",
-      "theodosia@gmail.com"
-    )
-  ];
+  shelters: Shelter[];
 
-  constructor() { }
+  constructor(private shelterListService: ShelterListService) { }
 
-  ngOnInit() { }
-
-  onShelterAdded(shelter: Shelter) {
-    this.shelters.push(shelter);
+  ngOnInit() {
+    this.shelters = this.shelterListService.getShelters();
+    this.shelterListService.shelterChanged
+      .subscribe(
+        (shelters: Shelter[]) => {
+          this.shelters = shelters;
+        }
+      );
   }
+
 }

@@ -1,17 +1,22 @@
-<div class="row">
-  <div class="col-xs-10">
-    <app-shelter-edit (shelterAdded)="onShelterAdded($event)"></app-shelter-edit>
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <ul class=" list-group">
+        <a class="list-group-item" style="cursor:pointer;" *ngFor="let shelter of shelters">
+          {{ shelter.name }}
+          <br />
+          {{ shelter.street }} {{ shelter.city }} {{ shelter.zip }}
+          <br />
+          {{ shelter.email }}
+          <br />
+          {{ shelter.phone }}
+        </a>
+      </ul>
+    </div>
+    <div class="col-sm-6">
+      <app-shelter-edit></app-shelter-edit>
+    </div>
+
   </div>
-  <hr />
-  <ul class="list-group">
-    <a class="list-group-item" style="cursor:pointer;" *ngFor="let shelter of shelters">
-      {{ shelter.name }}
-      <br />
-      {{ shelter.street }} {{ shelter.city }} {{ shelter.zip }}
-      <br />
-      {{ shelter.email }}
-      <br />
-      {{ shelter.phone }}
-    </a>
-  </ul>
 </div>

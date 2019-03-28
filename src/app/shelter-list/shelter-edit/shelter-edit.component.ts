@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
 import { Shelter } from 'src/app/shared/shelter.model';
+import { ShelterListService } from '../shelter-list.service';
 
 @Component({
   selector: 'app-shelter-edit',
@@ -15,9 +16,8 @@ export class ShelterEditComponent implements OnInit {
   @ViewChild('phoneInput') phoneInputReference: ElementRef;
   @ViewChild('emailInput') emailInputReference: ElementRef;
 
-  @Output() shelterAdded = new EventEmitter<Shelter>();
 
-  constructor() { }
+  constructor(private shelterListService: ShelterListService) { }
 
   ngOnInit() {
   }
@@ -33,7 +33,7 @@ export class ShelterEditComponent implements OnInit {
     const shPhone = this.phoneInputReference.nativeElement.value;
     const shEmail = this.emailInputReference.nativeElement.value;
     const newShelter = new Shelter(shName, shStreet, shCity, shState, shZip, shEmail, shPhone);
-    this.shelterAdded.emit(newShelter);
+    this.shelterListService.addShelter(newShelter);
   }
 
 }

@@ -11,6 +11,7 @@ import { AdopteesItemComponent } from './adoptees/adoptees-list/adoptees-item/ad
 import { ShelterListComponent } from './shelter-list/shelter-list.component';
 import { ShelterEditComponent } from './shelter-list/shelter-edit/shelter-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { ShelterListService } from './shelter-list/shelter-list.service'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     DropdownDirective
   ],
   imports: [BrowserModule, UiModule, FormsModule],
-  providers: [],
+  providers: [ShelterListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
