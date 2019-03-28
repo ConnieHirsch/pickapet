@@ -1,33 +1,29 @@
 <div class="row">
   <div class="col-xs-12">
-    <img src="{{ adoptee.imagePath}}" alt="{{ adoptee.name }}" class="img-responsive" />
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <h1>{{ adoptee.name }}</h1>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group" appDropdown>
-      <button type="button" class="btn btn-primary dropdown-toggle">
-        Do Stuff
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Go to Shelter Listing</a></li>
-        <li><a href="#">Edit Adoptee</a></li>
-        <li><a href="#">Delete Adoptee</a></li>
-      </ul>
+    <div class="btn-group">
+      <button class="btn btn-success" type="submit">Go to Shelter Listing</button>
+      <button class="btn btn-danger" type="button">Delete Adoptee</button>
+      <button class="btn btn-warning" type="reset">Edit Adoptee</button>
     </div>
   </div>
 </div>
+<hr>
+<div class="row">
+  <div class="col-xs-4">
+    <img src="{{ adoptee.imagePath}}" alt="{{ adoptee.name }}" class="img-responsive" />
+  </div>
+  <div class="col-xs-8">
+    <h1>{{ adoptee.name }}</h1>
+    <hr>
+    <p>{{ adoptee.type }}: {{ adoptee.breed }}, {{ adoptee.age }} years</p>
+    <hr>
+    <p>{{ adoptee.description }}</p>
+  </div>
+</div>
+
+
 
 <div class="row">
   <div class="col-xs-12">
-    <p>{{ adoptee.description }}</p>
-    <p>{{ adoptee.type }}: {{ adoptee.breed }}, {{ adoptee.age }} years</p>
   </div>
 </div>
