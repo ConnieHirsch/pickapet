@@ -6,8 +6,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <app-adoptees *ngIf="loadedFeature === 'shelter'"></app-adoptees>
-        <app-shelter-list *ngIf="loadedFeature !== 'shelter'"></app-shelter-list>
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
