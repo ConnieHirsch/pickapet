@@ -6,6 +6,9 @@
 <hr />
 <div class="row">
   <div class="col-xs-12">
-    <app-adoptees-item *ngFor="let adopteeChosen of adoptees" [adoptee]="adopteeChosen"></app-adoptees-item>
+    <app-adoptees-item
+      *ngFor="let adopteeChosen of adoptees; let i = index"
+        [adoptee]="adopteeChosen"
+        [index]="i"></app-adoptees-item>
   </div>
 </div>

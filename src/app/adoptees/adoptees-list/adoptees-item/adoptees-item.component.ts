@@ -9,6 +9,7 @@ import { AdopteesService } from '../../adoptees.service';
 })
 export class AdopteesItemComponent implements OnInit {
   @Input() adoptee: Adoptees;
+  @Input() index: number;
   //@Output() itemSelected = new EventEmitter<void>();
 
   // constructor(private adopteesService: AdopteesService) { }
