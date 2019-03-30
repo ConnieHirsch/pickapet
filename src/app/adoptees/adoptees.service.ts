@@ -26,4 +26,7 @@ export class AdopteesService {
   getAdoptees() {
     return this.adoptees.slice();
   }
+  getAdoptee(index: number) {
+    return this.adoptees[index];
+  }
 }
