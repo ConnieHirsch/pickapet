@@ -1,4 +1,6 @@
-<a style="cursor: pointer;" class="list-group-item clearfix" (click)="onItemSelected()">
+<a style="cursor: pointer;"
+  class="list-group-item clearfix"
+  (click)="onItemSelected()">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ adoptee.name }}</h4>
     <p class="list-group-item-text">{{ adoptee.description }}</p>
@@ -7,7 +9,10 @@
     <p class="list-group-item-text">Age: {{ adoptee.age }} years</p>
   </div>
   <span class="pull-right">
-    <img src="{{ adoptee.imagePath }}" alt="{{ adoptee.name }}" title="{{ adoptee.name }}" class="img-responsive"
+    <img src="{{ adoptee.imagePath }}"
+      alt="{{ adoptee.name }}"
+      title="{{ adoptee.name }}"
+        class="img-responsive"
       style="max-height: 100px;" />
   </span>
 </a>
