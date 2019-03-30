@@ -13,6 +13,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
 import { ShelterListService } from './shelter-list/shelter-list.service'
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
+import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HeaderComponent } from './header/header.component';
     ShelterEditComponent,
     HeaderComponent,
     AppComponent,
-    DropdownDirective
+    DropdownDirective,
+    AdopteesStartComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ShelterListService],
