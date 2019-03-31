@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Adoptees } from '../adoptees.model';
 import { AdopteesService } from '../adoptees.service';
@@ -14,7 +14,8 @@ export class AdopteesDetailComponent implements OnInit {
   id: number;
 
   constructor(private adopteesService: AdopteesService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit() {
     //const id = this.route.snapshot.params['id'];
@@ -26,4 +27,8 @@ export class AdopteesDetailComponent implements OnInit {
         });
   }
 
+  onEditRecipe() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+    //this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
+  }
 }
