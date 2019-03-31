@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 import { Adoptees } from '../adoptees.model';
 import { AdopteesService } from '../adoptees.service';
@@ -11,9 +12,15 @@ import { AdopteesService } from '../adoptees.service';
 export class AdopteesListComponent implements OnInit {
   adoptees: Adoptees[];
 
-  constructor(private adopteesService: AdopteesService) { }
+  constructor(private adopteesService: AdopteesService,
+    private router: Router,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.adoptees = this.adopteesService.getAdoptees();
+  }
+
+  onNewRecipe() {
+    this.router.navigate(['new'], { relativeTo: this.route });
   }
 }
