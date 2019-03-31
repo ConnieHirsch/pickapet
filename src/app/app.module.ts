@@ -14,6 +14,7 @@ import { ShelterListService } from './shelter-list/shelter-list.service'
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start.component';
+import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start
     HeaderComponent,
     AppComponent,
     DropdownDirective,
-    AdopteesStartComponent
+    AdopteesStartComponent,
+    AdopteesEditComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [ShelterListService],
