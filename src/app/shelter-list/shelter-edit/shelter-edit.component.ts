@@ -60,6 +60,11 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
     this.editMode = false;
   }
 
+  onDelete() {
+    this.shelterListService.deleteShelter(this.editedItemIndex);
+    this.onReset();
+  }
+
 }
 
 
