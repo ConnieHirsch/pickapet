@@ -35,7 +35,7 @@
     <div class="col-md-10">
       <button class="btn btn-success" type="submit" [disabled]="!f.valid">{{ editMode ? "Update" : "Add" }}</button>
       <button class="btn btn-danger" type="button">Delete</button>
-      <button class="btn btn-warning" type="reset">Clear</button>
+      <button class="btn btn-warning" type="reset" (click)="onReset()">Clear</button>
     </div>
   </div>
 </form>

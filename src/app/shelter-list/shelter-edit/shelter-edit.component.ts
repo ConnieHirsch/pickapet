@@ -55,6 +55,11 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
     form.reset();
   }
 
+  onReset() {
+    this.shelterForm.reset();
+    this.editMode = false;
+  }
+
 }
 
 
