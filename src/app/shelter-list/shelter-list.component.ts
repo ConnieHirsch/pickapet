@@ -1,20 +1,22 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { Shelter } from "../shared/shelter.model";
 import { ShelterListService } from './shelter-list.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: "app-shelter-list",
   templateUrl: "./shelter-list.component.html",
   styleUrls: ["./shelter-list.component.css"]
 })
-export class ShelterListComponent implements OnInit {
+export class ShelterListComponent implements OnInit, OnDestroy {
   shelters: Shelter[];
+  private subscription: Subscription;
 
   constructor(private shelterListService: ShelterListService) { }
 
   ngOnInit() {
     this.shelters = this.shelterListService.getShelters();
-    this.shelterListService.shelterChanged
+    this.subscription = this.shelterListService.shelterChanged
       .subscribe(
         (shelters: Shelter[]) => {
           this.shelters = shelters;
@@ -22,4 +24,7 @@ export class ShelterListComponent implements OnInit {
       );
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
