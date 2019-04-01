@@ -48,4 +48,9 @@ export class ShelterListService {
     this.shelters.push(shelter);
     this.shelterChanged.emit(this.shelters.slice());
   }
+
+  updateShelter(index: number, newShelter: Shelter) {
+    this.shelters[index] = newShelter;
+    this.shelterChanged.next(this.shelters.slice());
+  }
 }

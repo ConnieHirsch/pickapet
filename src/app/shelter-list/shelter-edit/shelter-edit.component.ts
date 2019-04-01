@@ -43,11 +43,16 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  onAddItem(form: NgForm) {
+  onSubmit(form: NgForm) {
     const value = form.value
     const newShelter = new Shelter(value.name, value.street, value.city, value.state, value.zip, value.email, value.phone);
-    this.shelterListService.addShelter(newShelter);
-
+    if (this.editMode) {
+      this.shelterListService.updateShelter(this.editedItemIndex, newShelter);
+    } else {
+      this.shelterListService.addShelter(newShelter);
+    }
+    this.editMode = false;
+    form.reset();
   }
 
 }
