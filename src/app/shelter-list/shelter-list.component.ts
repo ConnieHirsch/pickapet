@@ -27,4 +27,8 @@ export class ShelterListComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
+
+  onEditShelter(index) {
+    this.shelterListService.startedEditing.next(index);
+  }
 }

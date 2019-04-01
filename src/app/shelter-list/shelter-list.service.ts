@@ -1,8 +1,10 @@
 import { Shelter } from '../shared/shelter.model';
 import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export class ShelterListService {
   shelterChanged = new EventEmitter<Shelter[]>();
+  startedEditing = new Subject<number>();
 
   private shelters: Shelter[] = [
     new Shelter(

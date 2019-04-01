@@ -1,5 +1,6 @@
-import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 import { Shelter } from 'src/app/shared/shelter.model';
 import { ShelterListService } from '../shelter-list.service';
@@ -9,7 +10,11 @@ import { ShelterListService } from '../shelter-list.service';
   templateUrl: './shelter-edit.component.html',
   styleUrls: ['./shelter-edit.component.css']
 })
-export class ShelterEditComponent implements OnInit {
+export class ShelterEditComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
+  editMode = false;
+  editedItemIndex: number;
+
   // @ViewChild('nameInput') nameInputReference: ElementRef;
   // @ViewChild('streetInput') streetInputReference: ElementRef;
   // @ViewChild('cityInput') cityInputReference: ElementRef;
@@ -22,6 +27,17 @@ export class ShelterEditComponent implements OnInit {
   constructor(private shelterListService: ShelterListService) { }
 
   ngOnInit() {
+    this.subscription = this.shelterListService.startedEditing
+      .subscribe(
+        (index: number) => {
+          this.editedItemIndex = index;
+          this.editMode = true;
+        }
+      );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   onAddItem(form: NgForm) {
