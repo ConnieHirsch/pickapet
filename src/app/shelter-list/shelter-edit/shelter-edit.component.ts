@@ -11,18 +11,11 @@ import { ShelterListService } from '../shelter-list.service';
   styleUrls: ['./shelter-edit.component.css']
 })
 export class ShelterEditComponent implements OnInit, OnDestroy {
+  @ViewChild('f') shelterForm: NgForm;
   subscription: Subscription;
   editMode = false;
   editedItemIndex: number;
-
-  // @ViewChild('nameInput') nameInputReference: ElementRef;
-  // @ViewChild('streetInput') streetInputReference: ElementRef;
-  // @ViewChild('cityInput') cityInputReference: ElementRef;
-  // @ViewChild('stateInput') stateInputReference: ElementRef;
-  // @ViewChild('zipInput') zipInputReference: ElementRef;
-  // @ViewChild('phoneInput') phoneInputReference: ElementRef;
-  // @ViewChild('emailInput') emailInputReference: ElementRef;
-
+  editedItem: Shelter;
 
   constructor(private shelterListService: ShelterListService) { }
 
@@ -32,6 +25,16 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
         (index: number) => {
           this.editedItemIndex = index;
           this.editMode = true;
+          this.editedItem = this.shelterListService.getShelter(index);
+          this.shelterForm.setValue({
+            name: this.editedItem.name,
+            street: this.editedItem.street,
+            city: this.editedItem.city,
+            state: this.editedItem.state,
+            phone: this.editedItem.phone,
+            zip: this.editedItem.zip,
+            email: this.editedItem.email
+          })
         }
       );
   }
@@ -44,16 +47,7 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
     const value = form.value
     const newShelter = new Shelter(value.name, value.street, value.city, value.state, value.zip, value.email, value.phone);
     this.shelterListService.addShelter(newShelter);
-    //console.log("adding form.value: " + value);
-    // const shName = this.nameInputReference.nativeElement.value;
-    // //const shName = this.nameInputReference.nativeElement.value;
-    // const shStreet = this.streetInputReference.nativeElement.value;
-    // const shCity = this.cityInputReference.nativeElement.value;
-    // const shState = this.stateInputReference.nativeElement.value;
-    // const shZip = this.zipInputReference.nativeElement.value;
-    // const shPhone = this.phoneInputReference.nativeElement.value;
-    // const shEmail = this.emailInputReference.nativeElement.value;
-    //const newShelter = new Shelter(shName, shStreet, shCity, shState, shZip, shEmail, shPhone);
+
   }
 
 }

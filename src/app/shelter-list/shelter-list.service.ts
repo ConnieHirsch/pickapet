@@ -40,6 +40,10 @@ export class ShelterListService {
     return this.shelters.slice();
   }
 
+  getShelter(index: number) {
+    return this.shelters[index];
+  }
+
   addShelter(shelter: Shelter) {
     this.shelters.push(shelter);
     this.shelterChanged.emit(this.shelters.slice());
