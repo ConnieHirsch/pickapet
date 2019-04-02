@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AdopteesComponent } from './adoptees/adoptees.component';
@@ -30,7 +30,7 @@ import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.co
     AdopteesStartComponent,
     AdopteesEditComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
   providers: [ShelterListService],
   bootstrap: [AppComponent]
 })
