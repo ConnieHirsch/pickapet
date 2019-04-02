@@ -50,6 +50,10 @@ export class AdopteesService {
     console.log(newAdoptee);
     this.adoptees[index] = newAdoptee;
     this.adopteesChanged.next(this.adoptees.slice());
+  }
 
+  deleteAdoptee(index: number) {
+    this.adoptees.splice(index, 1);
+    this.adopteesChanged.next(this.adoptees.slice());
   }
 }

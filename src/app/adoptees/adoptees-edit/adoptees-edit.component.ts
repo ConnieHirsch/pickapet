@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AdopteesService } from '../adoptees.service';
@@ -16,6 +16,7 @@ export class AdopteesEditComponent implements OnInit {
   adopteeForm: FormGroup;
 
   constructor(private route: ActivatedRoute,
+    private router: Router,
     private adopteesService: AdopteesService) { }
 
   ngOnInit() {
@@ -44,6 +45,11 @@ export class AdopteesEditComponent implements OnInit {
     } else {
       this.adopteesService.addAdoptee(newAdoptee);
     }
+    this.onCancel();
+  }
+
+  onCancel() {
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
   private initForm() {

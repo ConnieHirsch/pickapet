@@ -31,4 +31,9 @@ export class AdopteesDetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route });
     //this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
   }
+
+  onDeleteAdoptee() {
+    this.adopteesService.deleteAdoptee(this.id);
+    this.router.navigate(['/adoptees']);
+  }
 }
