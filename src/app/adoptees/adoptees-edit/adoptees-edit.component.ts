@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AdopteesService } from '../adoptees.service';
+import { Adoptees } from '../adoptees.model';
 
 @Component({
   selector: 'app-adoptees-edit',
@@ -30,7 +31,19 @@ export class AdopteesEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.adopteeForm);
+    console.log("Saving: " + this.adopteeForm.value['imagePath']);
+    const newAdoptee = new Adoptees(
+      this.adopteeForm.value['name'],
+      this.adopteeForm.value['imagePath'],
+      this.adopteeForm.value['description'],
+      this.adopteeForm.value['type'],
+      this.adopteeForm.value['breed'],
+      this.adopteeForm.value['age']);
+    if (this.editMode) {
+      this.adopteesService.updateAdoptee(this.id, newAdoptee)
+    } else {
+      this.adopteesService.addAdoptee(newAdoptee);
+    }
   }
 
   private initForm() {

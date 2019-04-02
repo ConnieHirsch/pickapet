@@ -17,6 +17,12 @@ export class AdopteesListComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.adopteesService.adopteesChanged
+      .subscribe(
+        (adoptees: Adoptees[]) => {
+          this.adoptees = adoptees;
+        }
+      );
     this.adoptees = this.adopteesService.getAdoptees();
   }
 
