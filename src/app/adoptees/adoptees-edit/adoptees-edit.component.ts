@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AdopteesService } from '../adoptees.service';
 
@@ -51,11 +51,11 @@ export class AdopteesEditComponent implements OnInit {
       aAge = adoptee.age;
     }
     this.adopteeForm = new FormGroup({
-      'name': new FormControl(aName),
-      'imagePath': new FormControl(aImagePath),
-      'description': new FormControl(aDescription),
-      'type': new FormControl(aType),
-      'breed': new FormControl(aBreed),
+      'name': new FormControl(aName, Validators.required),
+      'imagePath': new FormControl(aImagePath, Validators.required),
+      'description': new FormControl(aDescription, Validators.required),
+      'type': new FormControl(aType, Validators.required),
+      'breed': new FormControl(aBreed, Validators.required),
       'age': new FormControl(aAge)
 
     });
