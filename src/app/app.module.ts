@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start.component';
 import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.component';
+import { AdopteesService } from './adoptees/adoptees.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.co
     AdopteesEditComponent
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
-  providers: [ShelterListService],
+  providers: [ShelterListService, AdopteesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
