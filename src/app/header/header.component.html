@@ -16,13 +16,8 @@
         <i class="fa fa-twitter"></i>
       </a>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown open">
-          <a href="#" class="dropdown-toggle" role="button">Data</a>
-          <ul class="dropdown-menu open" appDropdown>
-            <li><a href="#">Save Data</a></li>
-            <li><a href="#">Fetch Data</a></li>
-          </ul>
-        </li>
+        <button class="btn btn-outline-primary" (click)="onSaveData()">Save Data</button>
+        <button class="btn btn-outline-success" (click)="onFetchData()">Fetch Data</button>
       </ul>
     </div>
   </div>

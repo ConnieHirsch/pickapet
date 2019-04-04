@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AdopteesComponent } from './adoptees/adoptees.component';
@@ -16,6 +17,7 @@ import { HeaderComponent } from './header/header.component';
 import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start.component';
 import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.component';
 import { AdopteesService } from './adoptees/adoptees.service';
+import { DataStorageService } from './shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,8 @@ import { AdopteesService } from './adoptees/adoptees.service';
     AdopteesStartComponent,
     AdopteesEditComponent
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule],
-  providers: [ShelterListService, AdopteesService],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule],
+  providers: [ShelterListService, AdopteesService, DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
