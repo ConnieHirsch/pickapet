@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AdopteesComponent } from './adoptees/adoptees.component';
@@ -33,7 +33,11 @@ import { DataStorageService } from './shared/data-storage.service';
     AdopteesStartComponent,
     AdopteesEditComponent
   ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpModule],
   providers: [ShelterListService, AdopteesService, DataStorageService],
   bootstrap: [AppComponent]
 })
