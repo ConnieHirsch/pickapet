@@ -18,6 +18,8 @@ import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start
 import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.component';
 import { AdopteesService } from './adoptees/adoptees.service';
 import { DataStorageService } from './shared/data-storage.service';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DataStorageService } from './shared/data-storage.service';
     AppComponent,
     DropdownDirective,
     AdopteesStartComponent,
-    AdopteesEditComponent
+    AdopteesEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [BrowserModule,
     FormsModule,

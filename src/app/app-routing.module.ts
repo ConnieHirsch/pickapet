@@ -5,6 +5,7 @@ import { ShelterListComponent } from './shelter-list/shelter-list.component';
 import { AdopteesStartComponent } from './adoptees/adoptees-start/adoptees-start.component';
 import { AdopteesDetailComponent } from './adoptees/adoptees-detail/adoptees-detail.component';
 import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/adoptees', pathMatch: 'full' },
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
       { path: ':id/edit', component: AdopteesEditComponent }
     ]
   },
-  { path: 'shelters', component: ShelterListComponent }
+  { path: 'shelters', component: ShelterListComponent },
+  { path: 'signup', component: SignupComponent }
 ];
 
 @NgModule({
