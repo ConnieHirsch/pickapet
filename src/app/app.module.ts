@@ -20,6 +20,7 @@ import { AdopteesService } from './adoptees/adoptees.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { SigninComponent } from './auth/signin/signin.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpModule],
-  providers: [ShelterListService, AdopteesService, DataStorageService],
+  providers: [ShelterListService, AdopteesService, DataStorageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
