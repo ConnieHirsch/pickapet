@@ -19,9 +19,16 @@ export class HeaderComponent {
           console.log(response);
         }
       );
+    this.dataStorageService.storeShelters()
+      .subscribe(
+        (response: Response) => {
+          console.log(response);
+        }
+      );
   }
 
   onFetchData() {
-    console.log("Nothing yet");
+    this.dataStorageService.fetchPets();
+    this.dataStorageService.fetchShelters();
   }
 }

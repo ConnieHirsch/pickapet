@@ -36,6 +36,12 @@ export class ShelterListService {
     )
   ];
 
+  setShelters(shelters: Shelter[]) {
+    console.log(shelters);
+    this.shelters = shelters;
+    this.shelterChanged.next(this.shelters.slice());
+  }
+
   getShelters() {
     return this.shelters.slice();
   }

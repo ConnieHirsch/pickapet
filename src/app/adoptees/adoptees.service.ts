@@ -33,6 +33,12 @@ export class AdopteesService {
     )
   ];
 
+  setAdoptees(adoptees: Adoptees[]) {
+    console.log(adoptees);
+    this.adoptees = adoptees;
+    this.adopteesChanged.next(this.adoptees.slice());
+  }
+
   getAdoptees() {
     return this.adoptees.slice();
   }
