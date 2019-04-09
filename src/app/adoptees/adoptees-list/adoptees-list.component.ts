@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 
 import { Adoptees } from '../adoptees.model';
 import { AdopteesService } from '../adoptees.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-adoptees-list',
@@ -16,7 +17,8 @@ export class AdopteesListComponent implements OnInit, OnDestroy {
 
   constructor(private adopteesService: AdopteesService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private authService: AuthService) { }
 
   ngOnInit() {
     this.subscription = this.adopteesService.adopteesChanged
@@ -32,7 +34,7 @@ export class AdopteesListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  onNewRecipe() {
+  onNewAdoptee() {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
 }
