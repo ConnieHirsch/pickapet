@@ -7,15 +7,16 @@ import { AdopteesDetailComponent } from './adoptees/adoptees-detail/adoptees-det
 import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { AuthGuard } from './auth/auth-guard.service';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/adoptees', pathMatch: 'full' },
   {
     path: 'adoptees', component: AdopteesComponent, children: [
       { path: '', component: AdopteesStartComponent },
-      { path: 'new', component: AdopteesEditComponent },
+      { path: 'new', component: AdopteesEditComponent, canActivate: [AuthGuard] },
       { path: ':id', component: AdopteesDetailComponent },
-      { path: ':id/edit', component: AdopteesEditComponent }
+      { path: ':id/edit', component: AdopteesEditComponent, canActivate: [AuthGuard] }
     ]
   },
   { path: 'shelters', component: ShelterListComponent },
