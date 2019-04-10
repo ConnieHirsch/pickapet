@@ -5,6 +5,7 @@ export class Adoptees {
   public type: string;
   public breed: string;
   public age: number;
+  public shelter: string;
 
   constructor(
     name: string,
@@ -12,7 +13,8 @@ export class Adoptees {
     desc: string,
     type: string,
     breed: string,
-    age: number
+    age: number,
+    shelter: string
   ) {
     this.name = name;
     this.imagePath = imagePath;
@@ -20,5 +22,6 @@ export class Adoptees {
     this.type = type;
     this.breed = breed;
     this.age = age;
+    this.shelter = shelter;
   }
 }

@@ -13,7 +13,8 @@ export class AdopteesService {
       'This is a new dogue entry',
       'Dog',
       'Mutt',
-      2
+      2,
+      'Greater Derry Humane Society'
     ),
     new Adoptees(
       'Kitty Deadpool',
@@ -21,7 +22,8 @@ export class AdopteesService {
       'This is a new kitten entry',
       'Cat',
       'House',
-      1
+      1,
+      'Greater Derry Humane Society'
     ),
     new Adoptees(
       'Murder Biscuit',
@@ -29,7 +31,8 @@ export class AdopteesService {
       'A cat to beware of',
       'Cat',
       'Siamese',
-      12
+      12,
+      'Angel Memorial Shelter'
     )
   ];
 
