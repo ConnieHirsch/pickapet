@@ -3,6 +3,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { Adoptees } from '../adoptees.model';
 import { AdopteesService } from '../adoptees.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-adoptees-detail',
@@ -14,6 +15,7 @@ export class AdopteesDetailComponent implements OnInit {
   id: number;
 
   constructor(private adopteesService: AdopteesService,
+    private authService: AuthService,
     private route: ActivatedRoute,
     private router: Router) { }
 
