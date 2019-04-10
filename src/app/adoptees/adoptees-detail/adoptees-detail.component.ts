@@ -38,4 +38,8 @@ export class AdopteesDetailComponent implements OnInit {
     this.adopteesService.deleteAdoptee(this.id);
     this.router.navigate(['/adoptees']);
   }
+
+  onCloseDetail() {
+    this.router.navigate(['/']);
+  }
 }
