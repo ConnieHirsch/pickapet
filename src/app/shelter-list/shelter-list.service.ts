@@ -42,6 +42,13 @@ export class ShelterListService {
     this.shelterChanged.next(this.shelters.slice());
   }
 
+  getShelterNames() {
+    const sNames: string[];
+    for (i in this.shelters) {
+      sNames.push(this.shelters[i].name)
+    }
+    return sNames;
+  }
   getShelters() {
     return this.shelters.slice();
   }

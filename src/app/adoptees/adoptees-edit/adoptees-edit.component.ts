@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AdopteesService } from '../adoptees.service';
 import { Adoptees } from '../adoptees.model';
+import { ShelterListService } from 'src/app/shelter-list/shelter-list.service';
 
 @Component({
   selector: 'app-adoptees-edit',
@@ -17,7 +18,8 @@ export class AdopteesEditComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     private router: Router,
-    private adopteesService: AdopteesService) { }
+    private adopteesService: AdopteesService,
+    private shelterService: ShelterListService) { }
 
   ngOnInit() {
     this.route.params
