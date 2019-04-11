@@ -43,9 +43,14 @@ export class ShelterListService {
   }
 
   getShelterNames() {
-    const sNames: string[];
-    for (i in this.shelters) {
-      sNames.push(this.shelters[i].name)
+    var sNames = new Array();
+    let i: number;
+    for (let i in this.shelters) {
+      let iName = this.shelters[i].name;
+      console.log("Test # " + i + ": " + iName);
+      //return null;
+      sNames.push(iName);
+      //return sNames;
     }
     return sNames;
   }
