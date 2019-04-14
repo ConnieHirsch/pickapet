@@ -42,7 +42,8 @@ export class AdopteesEditComponent implements OnInit {
       this.adopteeForm.value['type'],
       this.adopteeForm.value['breed'],
       this.adopteeForm.value['age'],
-      this.adopteeForm.value['shelter']);
+      this.adopteeForm.value['shelter'],
+      this.adopteeForm.value['url']);
     if (this.editMode) {
       this.adopteesService.updateAdoptee(this.id, newAdoptee)
     } else {
@@ -63,6 +64,7 @@ export class AdopteesEditComponent implements OnInit {
     let aBreed = '';
     let aAge: number;
     let aShelter = '';
+    let aUrl = '';
 
     if (this.editMode) {
       const adoptee = this.adopteesService.getAdoptee(this.id);
@@ -73,6 +75,7 @@ export class AdopteesEditComponent implements OnInit {
       aBreed = adoptee.breed;
       aAge = adoptee.age;
       aShelter = adoptee.shelter;
+      aUrl = adoptee.url;
     }
     this.adopteeForm = new FormGroup({
       'name': new FormControl(aName, Validators.required),
@@ -81,7 +84,8 @@ export class AdopteesEditComponent implements OnInit {
       'type': new FormControl(aType, Validators.required),
       'breed': new FormControl(aBreed, Validators.required),
       'age': new FormControl(aAge),
-      'shelter': new FormControl(aShelter)
+      'shelter': new FormControl(aShelter),
+      'url': new FormControl(aUrl)
     });
   }
 
