@@ -14,7 +14,8 @@ export class ShelterListService {
       "NH",
       "02144",
       "555-555-5555",
-      "gdhs@gmail.com"
+      "gdhs@gmail.com",
+      'http://www.constancehirsch.com'
     ),
     new Shelter(
       "Angel Memorial Shelter",
@@ -23,7 +24,8 @@ export class ShelterListService {
       "MA",
       "02144",
       "555-555-5555",
-      "angell@gmail.com"
+      "angell@gmail.com",
+      'http://www.constancehirsch.com'
     ),
     new Shelter(
       "Mournful Paws",
@@ -32,7 +34,8 @@ export class ShelterListService {
       "MA",
       "02143",
       "555-555-5555",
-      "theodosia@gmail.com"
+      "theodosia@gmail.com",
+      'http://www.constancehirsch.com'
     )
   ];
 

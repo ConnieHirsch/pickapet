@@ -6,6 +6,7 @@ export class Shelter {
     public state: string,
     public zip: string,
     public phone: string,
-    public email: string
-  ) {}
+    public email: string,
+    public url: string
+  ) { }
 }

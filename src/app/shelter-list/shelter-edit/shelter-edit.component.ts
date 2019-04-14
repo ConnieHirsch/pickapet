@@ -33,7 +33,8 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
             state: this.editedItem.state,
             phone: this.editedItem.phone,
             zip: this.editedItem.zip,
-            email: this.editedItem.email
+            email: this.editedItem.email,
+            url: this.editedItem.url
           })
         }
       );
@@ -45,7 +46,7 @@ export class ShelterEditComponent implements OnInit, OnDestroy {
 
   onSubmit(form: NgForm) {
     const value = form.value
-    const newShelter = new Shelter(value.name, value.street, value.city, value.state, value.zip, value.email, value.phone);
+    const newShelter = new Shelter(value.name, value.street, value.city, value.state, value.zip, value.email, value.phone, value.url);
     if (this.editMode) {
       this.shelterListService.updateShelter(this.editedItemIndex, newShelter);
     } else {
