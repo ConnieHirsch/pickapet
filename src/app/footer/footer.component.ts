@@ -5,11 +5,11 @@ import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
 })
-export class HeaderComponent {
+export class FooterComponent {
 
   constructor(private dataStorageService: DataStorageService,
     public authService: AuthService) { }
@@ -38,3 +38,4 @@ export class HeaderComponent {
     this.authService.logout();
   }
 }
+

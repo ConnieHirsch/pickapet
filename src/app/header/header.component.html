@@ -7,23 +7,4 @@
       <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">About</a>
     </div>
   </div>
-  <div class="navbar-expand ml-auto navbar-nav">
-    <div class="navbar-nav">
-      <ng-template [ngIf]="!authService.isAuthenticated()">
-      <a class="nav-item nav-link" routerLink="/signup" routerLinkActive="active">Register</a>
-      <a class="nav-item nav-link" routerLink="/signin" routerLinkActive="active">SignIn</a>
-      </ng-template>
-      <a class="nav-item nav-link" href="https://github.com/conniehirsch" target="_blank">
-        <i class="fa fa-github"></i>
-      </a>
-      <a class="nav-item nav-link" href="https://twitter.com/conniehirsch" target="_blank">
-        <i class="fa fa-twitter"></i>
-      </a>
-      <ul class="nav navbar-nav navbar-right" *ngIf="authService.isAuthenticated()">
-        <button class="btn btn-outline-danger" (click)="onLogout()">Logout</button>
-        <button class="btn btn-outline-primary" (click)="onSaveData()">Save Data</button>
-        <button class="btn btn-outline-success" (click)="onFetchData()">Fetch Data</button>
-      </ul>
-    </div>
-  </div>
 </nav>
