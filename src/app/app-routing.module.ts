@@ -8,6 +8,7 @@ import { AdopteesEditComponent } from './adoptees/adoptees-edit/adoptees-edit.co
 import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuard } from './auth/auth-guard.service';
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/adoptees', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     ]
   },
   { path: 'shelters', component: ShelterListComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent }
 ];

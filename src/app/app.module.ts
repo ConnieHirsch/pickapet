@@ -22,6 +22,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AuthGuard } from './auth/auth-guard.service';
     AdopteesStartComponent,
     AdopteesEditComponent,
     SignupComponent,
-    SigninComponent
+    SigninComponent,
+    AboutComponent
   ],
   imports: [BrowserModule,
     FormsModule,
