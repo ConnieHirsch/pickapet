@@ -61,13 +61,27 @@
           </div>
         </div>
       </div>
-      <div class="row">
+
+      <!-- <div class="row">
         <div class="col-xs-12">
           <div class="form-group">
             <label for="shelter">Shelter</label>
             <input type="text" id="shelter" class="form-control" formControlName="shelter">
           </div>
+        </div> -->
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="shelter">Shelter</label>
+            <select name="shelter" id="shelter" class="form-control" formControlName="shelter">
+              <option *ngFor="let shelterName of shelterNames" [ngValue]="shelterName">{{shelterName}}</option>
+            </select>
+            <!-- <input type="text" id="shelter" class="form-control" formControlName="shelter"> -->
+          </div>
         </div>
+
+
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -86,6 +100,13 @@
           </div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <li *ngFor="let shelterName of shelterNames"> {{ shelterName }} </li>
+        </div>
+      </div>
+
       <button class="btn btn-danger" (click)="onShelterList()">Shelter List</button>
     </form>
   </div>

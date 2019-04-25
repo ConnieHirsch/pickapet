@@ -15,6 +15,7 @@ export class AdopteesEditComponent implements OnInit {
   id: number;
   editMode = false;
   adopteeForm: FormGroup;
+  shelterNames: string[];
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -22,6 +23,7 @@ export class AdopteesEditComponent implements OnInit {
     private shelterService: ShelterListService) { }
 
   ngOnInit() {
+    this.shelterNames = this.shelterService.getShelterNames();
     this.route.params
       .subscribe(
         (params: Params) => {
