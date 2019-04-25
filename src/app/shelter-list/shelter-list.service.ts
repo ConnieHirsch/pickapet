@@ -1,6 +1,7 @@
 import { Shelter } from '../shared/shelter.model';
 import { EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
+import { stringify } from '@angular/core/src/util';
 
 export class ShelterListService {
   shelterChanged = new EventEmitter<Shelter[]>();
@@ -43,6 +44,27 @@ export class ShelterListService {
     console.log(shelters);
     this.shelters = shelters;
     this.shelterChanged.next(this.shelters.slice());
+  }
+
+  betterShelterNames() {
+    var sNames = new Array();
+    //var sNames: { shelter: string, url: string }[];
+    let i: number;
+
+    //let iName: string;
+    for (let i in this.shelters) {
+
+      let iName = this.shelters[i].name;
+      let iUrl = this.shelters[i].url
+      console.log("Test # " + i + ": " + iName + " / " + iUrl);
+      //return null;
+      var sn = { shelter: iName, url: iUrl };
+      //var sn = { shelter: iName, url: iUrl };
+      console.log(sn);
+      sNames.push(sn);
+      //return sNames;
+    }
+    return sNames;
   }
 
   getShelterNames() {

@@ -92,6 +92,6 @@ export class AdopteesEditComponent implements OnInit {
   }
 
   onShelterList() {
-    console.log(this.shelterService.getShelterNames());
+    console.log(this.shelterService.betterShelterNames());
   }
 }
