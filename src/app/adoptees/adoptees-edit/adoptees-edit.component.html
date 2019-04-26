@@ -74,7 +74,11 @@
         <div class="col-xs-12">
           <div class="form-group">
             <label for="shelter">Shelter</label>
-            <select name="shelter" id="shelter" class="form-control" formControlName="shelter">
+            <select name="shelter"
+              id="shelter"
+              class="form-control"
+              formControlName="shelter"
+              >
               <option *ngFor="let shelterName of shelterNames" [ngValue]="shelterName">{{shelterName}}</option>
             </select>
             <!-- <input type="text" id="shelter" class="form-control" formControlName="shelter"> -->

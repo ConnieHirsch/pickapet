@@ -48,21 +48,11 @@ export class ShelterListService {
 
   betterShelterNames() {
     var sNames = new Array();
-    //var sNames: { shelter: string, url: string }[];
     let i: number;
-
-    //let iName: string;
     for (let i in this.shelters) {
-
-      let iName = this.shelters[i].name;
-      let iUrl = this.shelters[i].url
-      console.log("Test # " + i + ": " + iName + " / " + iUrl);
-      //return null;
-      var sn = { shelter: iName, url: iUrl };
-      //var sn = { shelter: iName, url: iUrl };
+      var sn = { shelter: this.shelters[i].name, url: this.shelters[i].url };
       console.log(sn);
       sNames.push(sn);
-      //return sNames;
     }
     return sNames;
   }
@@ -72,7 +62,7 @@ export class ShelterListService {
     let i: number;
     for (let i in this.shelters) {
       let iName = this.shelters[i].name;
-      console.log("Test # " + i + ": " + iName);
+      //console.log("Test # " + i + ": " + iName);
       //return null;
       sNames.push(iName);
       //return sNames;
