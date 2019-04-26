@@ -1,7 +1,6 @@
 import { Shelter } from '../shared/shelter.model';
 import { EventEmitter } from '@angular/core';
 import { Subject } from 'rxjs';
-import { stringify } from '@angular/core/src/util';
 
 export class ShelterListService {
   shelterChanged = new EventEmitter<Shelter[]>();
@@ -16,7 +15,7 @@ export class ShelterListService {
       "02144",
       "555-555-5555",
       "gdhs@gmail.com",
-      'http://www.constancehirsch.com'
+      'http://www.constancehirsch.com/test/Derry'
     ),
     new Shelter(
       "Angel Memorial Shelter",
@@ -26,7 +25,7 @@ export class ShelterListService {
       "02144",
       "555-555-5555",
       "angell@gmail.com",
-      'http://www.constancehirsch.com'
+      'http://www.constancehirsch.com/test/Angel'
     ),
     new Shelter(
       "Mournful Paws",
@@ -36,7 +35,7 @@ export class ShelterListService {
       "02143",
       "555-555-5555",
       "theodosia@gmail.com",
-      'http://www.constancehirsch.com'
+      'http://www.constancehirsch.com/test/Paws'
     )
   ];
 
@@ -69,6 +68,17 @@ export class ShelterListService {
     }
     return sNames;
   }
+
+  findUrlbyShelterName(shelterName: string): string {
+    let results = this.shelters.filter((name) => name.name === shelterName);
+    return results.length === 1 ? results[0].url : '';
+  }
+  // findCountryCodeByCountryName(countryName: string): string {
+  //   let results = this.countries.filter((country) => country.countryName === countryName);
+  //   return results.length === 1 ? results[0].countryCode : '';
+  // }
+
+
   getShelters() {
     return this.shelters.slice();
   }

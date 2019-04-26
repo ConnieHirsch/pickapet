@@ -20,7 +20,8 @@ export class AdopteesEditComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private router: Router,
     private adopteesService: AdopteesService,
-    private shelterService: ShelterListService) { }
+    private shelterService: ShelterListService) {
+  }
 
   ngOnInit() {
     this.shelterNames = this.shelterService.getShelterNames();
@@ -89,6 +90,14 @@ export class AdopteesEditComponent implements OnInit {
       'shelter': new FormControl(aShelter),
       'url': new FormControl(aUrl)
     });
+
+    // check for shelter name change and update URL on form.
+    this.adopteeForm.controls.shelter.valueChanges.subscribe((shelter) => {
+      console.log("Shelter changed! " + shelter);
+      let newURL = this.shelterService.findUrlbyShelterName(shelter);
+      console.log("URL should be " + newURL);
+      this.adopteeForm.controls.url.setValue(newURL);
+    })
   }
 
   onShelterList() {
