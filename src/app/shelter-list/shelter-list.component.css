@@ -1,0 +1,7 @@
+.container {
+  font-size: .75rem;
+}
+.list-group-item {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
