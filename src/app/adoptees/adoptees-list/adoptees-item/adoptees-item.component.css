@@ -1,4 +1,7 @@
 
 a.card.clearfix {
   margin-left: 10px;
+  font-size: .75rem;
+  padding: 5px 10px;
+  margin-bottom: 5px;
 }

@@ -4,14 +4,14 @@
   class="card clearfix"
   >
   <div class="pull-left">
+    <h4 class="card-heading" style="max-width: 80%;">{{ adoptee.name }}</h4>
   <span class="pull-right">
     <img src="{{ adoptee.imagePath }}"
       alt="{{ adoptee.name }}"
       title="{{ adoptee.name }}"
         class="img-responsive"
-      style="max-height: 150px; max-width: 50%;" />
+      style="max-height: 150px;" />
   </span>
-    <h4 class="card-heading" style="max-width: 50%;">{{ adoptee.name }}</h4>
     <p class="card-text">{{ adoptee.description }}</p>
     <p class="card-text"> <strong>{{ adoptee.type }}</strong>: {{ adoptee.breed }} {{ adoptee.age }} years</p>
     <p class="card-text">Available via {{ adoptee.shelter }}</p>
