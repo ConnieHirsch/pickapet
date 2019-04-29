@@ -24,6 +24,7 @@ import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AboutComponent } from './about/about.component';
 import { FooterComponent } from './footer/footer.component';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     SignupComponent,
     SigninComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    SplashComponent
   ],
   imports: [BrowserModule,
     FormsModule,
