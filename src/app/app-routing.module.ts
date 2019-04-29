@@ -9,9 +9,12 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { AuthGuard } from './auth/auth-guard.service';
 import { AboutComponent } from './about/about.component';
+import { SplashComponent } from './splash/splash.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/adoptees', pathMatch: 'full' },
+  { path: '', redirectTo: 'splash', pathMatch: 'full' },
+  { path: 'splash', component: SplashComponent },
+
   {
     path: 'adoptees', component: AdopteesComponent, children: [
       { path: '', component: AdopteesStartComponent },
