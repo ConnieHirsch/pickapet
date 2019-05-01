@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { Adoptees } from '../adoptees/adoptees.model';
@@ -9,7 +9,7 @@ import { AdopteesService } from '../adoptees/adoptees.service';
   templateUrl: './splash.component.html',
   styleUrls: ['./splash.component.css']
 })
-export class SplashComponent implements OnInit {
+export class SplashComponent implements OnInit, OnDestroy {
   adoptees: Adoptees[];
   subscription: Subscription;
 
