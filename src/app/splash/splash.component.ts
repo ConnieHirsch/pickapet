@@ -1,32 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
-
-import { Adoptees } from '../adoptees/adoptees.model';
-import { AdopteesService } from '../adoptees/adoptees.service';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-splash',
-  templateUrl: './splash.component.html',
-  styleUrls: ['./splash.component.css']
+  selector: "ngbd-carousel-basic",
+  templateUrl: "./splash.component.html"
 })
-export class SplashComponent implements OnInit, OnDestroy {
-  adoptees: Adoptees[];
-  subscription: Subscription;
-
-  constructor(private adopteesService: AdopteesService) { }
-
-  ngOnInit() {
-    this.subscription = this.adopteesService.adopteesChanged
-      .subscribe(
-        (adoptees: Adoptees[]) => {
-          this.adoptees = adoptees;
-        }
-      );
-    this.adoptees = this.adopteesService.getAdoptees();
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
+export class SplashComponent {
+  images = [1, 2, 3].map(
+    () => `https://picsum.photos/900/500?random&t=${Math.random()}`
+  );
 }
