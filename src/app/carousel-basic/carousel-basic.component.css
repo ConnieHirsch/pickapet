@@ -1,3 +1,6 @@
-.carousel-caption {
+.carousel-caption,
+.carousel-indicators,
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
   color: blue;
 }

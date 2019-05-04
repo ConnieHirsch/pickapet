@@ -15,10 +15,6 @@ export class CarouselBasicComponent implements OnInit, OnDestroy {
   images: Array<string>;
   captions: Array<string>;
 
-  // images = [1, 2, 3].map(
-  //   () => `https://picsum.photos/900/500?random&t=${Math.random()}`
-  // );
-
   constructor(private adopteesService: AdopteesService) {}
 
   ngOnInit() {
