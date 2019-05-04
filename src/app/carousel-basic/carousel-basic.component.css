@@ -1,6 +1,11 @@
 .carousel-caption,
-.carousel-indicators,
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+.carousel-indicators {
   color: blue;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("https://apufpel.com.br/assets/img/seta_prim.png");
+}
+.carousel-control-next-icon {
+  background-image: url("https://apufpel.com.br/assets/img/seta_ult.png");
 }

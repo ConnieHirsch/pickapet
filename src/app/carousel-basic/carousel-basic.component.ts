@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from "@angular/core";
 import { Adoptees } from "../adoptees/adoptees.model";
 import { AdopteesService } from "../adoptees/adoptees.service";
 import { Subscription } from "rxjs";
@@ -6,7 +6,8 @@ import { Subscription } from "rxjs";
 @Component({
   selector: "app-carousel-basic",
   templateUrl: "./carousel-basic.component.html",
-  styleUrls: ["./carousel-basic.component.css"]
+  styleUrls: ["./carousel-basic.component.css"],
+  encapsulation: ViewEncapsulation.None
 })
 export class CarouselBasicComponent implements OnInit, OnDestroy {
   adoptees: Adoptees[];
