@@ -1,6 +1,6 @@
-import { Adoptees } from './adoptees.model';
-import { EventEmitter } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Adoptees } from "./adoptees.model";
+import { EventEmitter } from "@angular/core";
+import { Subject } from "rxjs";
 
 export class AdopteesService {
   adopteesChanged = new Subject<Adoptees[]>();
@@ -8,34 +8,34 @@ export class AdopteesService {
 
   private adoptees: Adoptees[] = [
     new Adoptees(
-      'A Dogue',
-      'http://place-puppy.com/200x200',
-      'This is a new dogue entry',
-      'Dog',
-      'Mutt',
+      "A Dogue",
+      "http://place-puppy.com/200x200",
+      "This is a new dogue entry",
+      "Dog",
+      "Mutt",
       2,
-      'Greater Derry Humane Society',
-      'http://www.constancehirsch.com'
+      "Greater Derry Humane Society",
+      "http://www.constancehirsch.com"
     ),
     new Adoptees(
-      'Kitty Deadpool',
-      'http://placekitten.com/200/300',
-      'This is a new kitten entry',
-      'Cat',
-      'House',
+      "Kitty Deadpool",
+      "http://placekitten.com/200/300",
+      "This is a new kitten entry",
+      "Cat",
+      "House",
       1,
-      'Greater Derry Humane Society',
-      'http://www.constancehirsch.com'
+      "Greater Derry Humane Society",
+      "http://www.constancehirsch.com"
     ),
     new Adoptees(
-      'Murder Biscuit',
-      'http://placekitten.com/300/300',
-      'A cat to beware of',
-      'Cat',
-      'Siamese',
+      "Murder Biscuit",
+      "http://placekitten.com/300/300",
+      "A cat to beware of",
+      "Cat",
+      "Siamese",
       12,
-      'Angel Memorial Shelter',
-      'http://www.constancehirsch.com'
+      "Angel Memorial Shelter",
+      "http://www.constancehirsch.com"
     )
   ];
 
@@ -67,5 +67,17 @@ export class AdopteesService {
   deleteAdoptee(index: number) {
     this.adoptees.splice(index, 1);
     this.adopteesChanged.next(this.adoptees.slice());
+  }
+
+  getImages() {
+    let iPaths = new Array();
+    let i: number;
+    for (let i in this.adoptees) {
+      let iPath = <string>this.adoptees[i].imagePath;
+      iPaths.push(iPath);
+    }
+    let final = <Array<string>>iPaths;
+    console.log("iPaths: " + final);
+    return final;
   }
 }
