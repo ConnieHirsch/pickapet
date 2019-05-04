@@ -11,19 +11,10 @@ import { Subscription } from "rxjs";
 export class CarouselBasicComponent implements OnInit, OnDestroy {
   adoptees: Adoptees[];
   subscription: Subscription;
-  //arrImages: Array<string> = this.adopteesService.getImages();
 
   images: Array<string>;
-  // images = [
-  //   "http://place-puppy.com/400x220",
-  //   "http://place-puppy.com/400x400",
-  //   "http://placekitten.com/200/300",
-  //   "http://placekitten.com/300/300"
-  // ];
-  //images = [1, 2, 3].map(() => this.getImages());
+  captions: Array<string>;
 
-  //images = <Array<string>>this.getImages();
-  captions = this.getCaptions();
   // images = [1, 2, 3].map(
   //   () => `https://picsum.photos/900/500?random&t=${Math.random()}`
   // );
@@ -39,6 +30,8 @@ export class CarouselBasicComponent implements OnInit, OnDestroy {
     this.adoptees = this.adopteesService.getAdoptees();
 
     this.images = this.adopteesService.getImages();
+
+    this.captions = this.getCaptions();
   }
 
   ngOnDestroy() {
