@@ -19,7 +19,7 @@ export class AdopteesService {
     ),
     new Adoptees(
       "Kitty Deadpool",
-      "http://placekitten.com/200/300",
+      "http://placekitten.com/210/204",
       "This is a new kitten entry",
       "Cat",
       "House",
@@ -29,7 +29,7 @@ export class AdopteesService {
     ),
     new Adoptees(
       "Murder Biscuit",
-      "http://placekitten.com/300/300",
+      "http://placekitten.com/250/250",
       "A cat to beware of",
       "Cat",
       "Siamese",

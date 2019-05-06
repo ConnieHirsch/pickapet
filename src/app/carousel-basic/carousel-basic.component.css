@@ -1,6 +1,9 @@
 .carousel-caption,
 .carousel-indicators {
   color: blue;
+  background-color: aliceblue;
+  opacity: 0.6;
+  padding-bottom: 40px;
 }
 
 .carousel-control-prev-icon {

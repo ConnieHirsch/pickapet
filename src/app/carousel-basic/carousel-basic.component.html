@@ -1,13 +1,30 @@
-<ngb-carousel *ngIf="images">
-  <ng-template ngbSlide *ngFor="let adoptee of adoptees">
-    <img
-      [src]="adoptee.imagePath"
-      alt="adoptable pet: {{ adoptee.name }}"
-      class="img-responsive"
-    />
-    <div class="carousel-caption">
-      <h3>{{ adoptee.name }}</h3>
-      <p>{{ adoptee.description }}</p>
+<ngb-carousel
+  *ngIf="adoptees"
+  [showNavigationIndicators]="showNavigationIndicators"
+>
+  <ng-template ngbSlide *ngFor="let adoptee of adoptees; let i = index">
+    <div class="center-block">
+      <img
+        [src]="adoptee.imagePath"
+        alt="adoptable pet: {{ adoptee.name }}"
+        class="img-fluid rounded mx-auto d-block"
+        style="max-height: 200px;"
+      />
+      <div class="carousel-caption mb-5">
+        <h4>{{ adoptee.name }}</h4>
+      </div>
+    </div>
+    <div class="mx-auto mt-3" style="text-align: center;">
+      <p class="text-truncate mx-auto mt-3" style="max-width: 200px;">
+        {{ adoptee.description }}
+      </p>
+      <button
+        class="btn btn-outline-success mx-auto mt-3"
+        (click)="onPickAdoptee(i)"
+        type="button"
+      >
+        More about {{ adoptee.name }}
+      </button>
     </div>
   </ng-template>
 </ngb-carousel>
