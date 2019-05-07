@@ -1,10 +1,37 @@
 <nav class="navbar navbar-dark bg-dark mb-5">
-  <a class="navbar-brand nav-item nav-link" routerLink="/splash" >Pick A Pet</a>
-  <div class="navbar-expand mr-auto">
+  <a class="navbar-brand nav-item nav-link" routerLink="/splash">Pick A Pet</a>
+  <div class="navbar-expand-md mr-auto">
     <div class="navbar-nav">
-      <a class="nav-item nav-link" routerLink="/adoptees" routerLinkActive="active">Adoptees</a>
-      <a class="nav-item nav-link" routerLink="/shelters" routerLinkActive="active">Shelters</a>
-      <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">About</a>
+      <a
+        class="nav-item nav-link"
+        routerLink="/adoptees"
+        routerLinkActive="active"
+        >Adoptees</a
+      >
+      <a
+        class="nav-item nav-link"
+        routerLink="/shelters"
+        routerLinkActive="active"
+        >Shelters</a
+      >
+      <a class="nav-item nav-link" routerLink="/about" routerLinkActive="active"
+        >About</a
+      >
+      <!--  -->
+
+      <!--  -->
+      <div class="nav text-right">
+        <li ngbDropdown class="dropdown nav-link text-right" appDropdown>
+          <a ngbDropdownToggle class="dropdown-toggle" role="button"
+            >Manage<span class="caret"></span
+          ></a>
+          <div ngbDropdownMenu class="dropdown-menu">
+            <a class="dropdown-item" href="#">Save Data</a>
+            <a class="dropdown-item" href="#">Fetch Data</a>
+          </div>
+        </li>
+      </div>
+      <!--  -->
     </div>
   </div>
 </nav>
