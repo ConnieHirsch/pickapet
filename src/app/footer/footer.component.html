@@ -1,24 +1,33 @@
 <nav class="navbar navbar-dark bg-dark mt-5">
-    <div class="navbar-expand ml-auto navbar-nav">
-      <div class="navbar-nav">
-        <ng-template [ngIf]="!authService.isAuthenticated()">
+  <div class="navbar-expand ml-auto navbar-nav">
+    <div class="navbar-nav">
+      <!-- <ng-template [ngIf]="!authService.isAuthenticated()">
         <a class="nav-item nav-link" routerLink="/signup" routerLinkActive="active">Register</a>
         <a class="nav-item nav-link" routerLink="/signin" routerLinkActive="active">SignIn</a>
-        </ng-template>
-        <a class="nav-item nav-link" href="https://github.com/conniehirsch" target="_blank">
-          <i class="fa fa-github"></i>
-        </a>
-        <a class="nav-item nav-link" href="https://twitter.com/conniehirsch" target="_blank">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <ul class="nav navbar-nav navbar-right" *ngIf="authService.isAuthenticated()">
+        </ng-template> -->
+      <a
+        class="nav-item nav-link"
+        href="https://github.com/conniehirsch"
+        target="_blank"
+      >
+        <i class="fa fa-github"></i>
+      </a>
+      <a
+        class="nav-item nav-link"
+        href="https://twitter.com/conniehirsch"
+        target="_blank"
+      >
+        <i class="fa fa-twitter"></i>
+      </a>
+      <!-- <ul class="nav navbar-nav navbar-right" *ngIf="authService.isAuthenticated()">
           <button class="btn btn-outline-danger" (click)="onLogout()">Logout</button>
           <button class="btn btn-outline-primary" (click)="onSaveData()">Save Data</button>
           <button class="btn btn-outline-success" (click)="onFetchData()">Fetch Data</button>
-        </ul>
-      </div>
+        </ul> -->
     </div>
+  </div>
   <div class="navbar-expand m-auto navbar-text">
-    Made with <i class="fa fa-heart"></i> by <a href="https://twitter.com/conniehirsch">Constance Hirsch</a>
+    Made with <i class="fa fa-heart"></i> by
+    <a href="https://twitter.com/conniehirsch">Constance Hirsch</a>
   </div>
 </nav>

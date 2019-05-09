@@ -3,18 +3,17 @@
   [showNavigationIndicators]="showNavigationIndicators"
 >
   <ng-template ngbSlide *ngFor="let adoptee of adoptees; let i = index">
-    <div class="center-block">
+    <div class="center-block mt-2">
       <img
         [src]="adoptee.imagePath"
         alt="adoptable pet: {{ adoptee.name }}"
-        class="img-fluid rounded mx-auto d-block"
-        style="max-height: 200px;"
+        class="img-fluid rounded mx-auto d-block h-75"
       />
       <div class="carousel-caption mb-5">
         <h4>{{ adoptee.name }}</h4>
       </div>
     </div>
-    <div class="mx-auto mt-3" style="text-align: center;">
+    <div class="mx-auto mt-2" style="text-align: center;">
       <p class="text-truncate mx-auto mt-3" style="max-width: 200px;">
         {{ adoptee.description }}
       </p>

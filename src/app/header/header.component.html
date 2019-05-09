@@ -35,8 +35,32 @@
           >Manage<span class="caret"></span
         ></a>
         <div ngbDropdownMenu class="dropdown-menu">
-          <a class="dropdown-item" href="#">Save Data</a>
-          <a class="dropdown-item" href="#">Fetch Data</a>
+          <div class="list-group" *ngIf="!authService.isAuthenticated()">
+            <a
+              class="nav-item nav-link"
+              routerLink="/signin"
+              routerLinkActive="active"
+              >SignIn</a
+            >
+            <a
+              class="nav-item nav-link"
+              routerLink="/signup"
+              routerLinkActive="active"
+              >Register</a
+            >
+          </div>
+
+          <div class="list-group" *ngIf="authService.isAuthenticated()">
+            <button class="btn btn-outline-danger" (click)="onLogout()">
+              Logout
+            </button>
+            <button class="btn btn-outline-primary" (click)="onSaveData()">
+              Save Data
+            </button>
+            <button class="btn btn-outline-success" (click)="onFetchData()">
+              Fetch Data
+            </button>
+          </div>
         </div>
       </li>
     </div>
