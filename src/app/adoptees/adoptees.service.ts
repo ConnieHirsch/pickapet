@@ -15,7 +15,7 @@ export class AdopteesService {
       "Mutt",
       2,
       "Greater Derry Humane Society",
-      "http://www.constancehirsch.com/test/Derry"
+      "http://www.constancehirsch.com/test.html?pet=Dogue"
     ),
     new Adoptees(
       "Kitty Deadpool",
@@ -25,7 +25,7 @@ export class AdopteesService {
       "House",
       1,
       "Greater Derry Humane Society",
-      "http://www.constancehirsch.com"
+      "http://www.constancehirsch.com/test.html?pet=Kitty"
     ),
     new Adoptees(
       "Murder Biscuit",
@@ -35,7 +35,7 @@ export class AdopteesService {
       "Siamese",
       12,
       "Angel Memorial Shelter",
-      "http://www.constancehirsch.com"
+      "http://www.constancehirsch.com/test.html?pet=Biscuit"
     )
   ];
 
