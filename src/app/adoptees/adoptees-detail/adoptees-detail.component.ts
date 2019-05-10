@@ -1,10 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Params, Router } from "@angular/router";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 import { Adoptees } from "../adoptees.model";
 import { AdopteesService } from "../adoptees.service";
 import { AuthService } from "src/app/auth/auth.service";
-import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-adoptees-detail",
@@ -14,7 +14,7 @@ import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 export class AdopteesDetailComponent implements OnInit {
   adoptee: Adoptees;
   id: number;
-  closeResult: string;
+  closeResult: string; // modal value
 
   constructor(
     private adopteesService: AdopteesService,

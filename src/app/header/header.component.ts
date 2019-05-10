@@ -12,6 +12,8 @@ import { AuthService } from "../auth/auth.service";
 export class HeaderComponent {
   // navbar collapse for menu
   public isCollapsed = false;
+  displayButton = "show-class";
+  navSize = "navbar-regular";
   screenHeight: any;
   screenWidth: any;
 
@@ -31,8 +33,12 @@ export class HeaderComponent {
     }
     if (this.screenWidth > 768) {
       this.isCollapsed = false;
+      this.displayButton = "hide-class";
+      this.navSize = "navbar-regular;";
     } else {
       this.isCollapsed = true;
+      this.displayButton = "show-class";
+      this.navSize = "navbar-small";
     }
   }
   onSaveData() {
