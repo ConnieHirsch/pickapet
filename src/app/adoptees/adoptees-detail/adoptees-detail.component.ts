@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from "@angular/router";
 import { Adoptees } from "../adoptees.model";
 import { AdopteesService } from "../adoptees.service";
 import { AuthService } from "src/app/auth/auth.service";
+import { NgbModal, ModalDismissReasons } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: "app-adoptees-detail",
@@ -13,12 +14,14 @@ import { AuthService } from "src/app/auth/auth.service";
 export class AdopteesDetailComponent implements OnInit {
   adoptee: Adoptees;
   id: number;
+  closeResult: string;
 
   constructor(
     private adopteesService: AdopteesService,
     public authService: AuthService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
@@ -41,5 +44,27 @@ export class AdopteesDetailComponent implements OnInit {
 
   onCloseDetail() {
     this.router.navigate(["/"]);
+  }
+  open(content) {
+    this.modalService
+      .open(content, { ariaLabelledBy: "modal-basic-title" })
+      .result.then(
+        result => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        reason => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return "by pressing ESC";
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return "by clicking on a backdrop";
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

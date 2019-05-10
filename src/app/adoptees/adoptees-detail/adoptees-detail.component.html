@@ -1,27 +1,89 @@
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group" *ngIf="authService.isAuthenticated()">
-      <button class="btn btn-warning"  type="button" (click)="onEditAdoptee()">Edit Adoptee</button>
-      <button class="btn btn-danger" type="button" (click)="onDeleteAdoptee()">Delete Adoptee</button>
+      <button class="btn btn-warning" type="button" (click)="onEditAdoptee()">
+        Edit Adoptee
+      </button>
+      <button class="btn btn-danger" type="button" (click)="onDeleteAdoptee()">
+        Delete Adoptee
+      </button>
     </div>
   </div>
 </div>
-<hr>
+<hr />
 <div class="card">
   <div class="card-header text-right">
-    <button class="btn btn-secondary btn-sm" (click)="onCloseDetail()">Back to List</button>
+    <button class="btn btn-secondary btn-sm" (click)="onCloseDetail()">
+      Back to List
+    </button>
   </div>
-    <img src="{{ adoptee.imagePath}}"
-      alt="{{ adoptee.name }}"
-      style="max-height: 300px; max-width: 300px;"
-      class="img-responsive card-img-top" />
+  <img
+    src="{{ adoptee.imagePath }}"
+    alt="{{ adoptee.name }}"
+    style="max-height: 300px; max-width: 300px;"
+    class="img-responsive card-img-top"
+  />
 
-    <h2 class="card-title">{{ adoptee.name }}</h2>
+  <h2 class="card-title">{{ adoptee.name }}</h2>
   <div class="card-body">
-    <p class="card-text">{{ adoptee.type }}: {{ adoptee.breed }}, {{ adoptee.age }} years</p>
-    <hr>
+    <p class="card-text">
+      {{ adoptee.type }}: {{ adoptee.breed }}, {{ adoptee.age }} years
+    </p>
+    <hr />
     <p class="card-text">{{ adoptee.description }}</p>
-    <p class="card-text"><a href="{{ adoptee.url }}">{{ adoptee.shelter }} </a></p>
+    <p class="card-text">
+      <a href="{{ adoptee.url }}">{{ adoptee.shelter }} </a>
+    </p>
   </div>
 </div>
 
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label for="dateOfBirth">Date of birth</label>
+        <div class="input-group">
+          <input
+            id="dateOfBirth"
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            ngbDatepicker
+            #dp="ngbDatepicker"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-secondary calendar"
+              (click)="dp.toggle()"
+              type="button"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+  Launch demo modal
+</button>
