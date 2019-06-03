@@ -10,7 +10,7 @@ export class AdopteesService {
     new Adoptees(
       "A Dogue",
       "http://place-puppy.com/200x200",
-      "This is a new dogue entry",
+      "This is a new dogue entry Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore.",
       "Dog",
       "Mutt",
       2,
@@ -20,7 +20,7 @@ export class AdopteesService {
     new Adoptees(
       "Kitty Deadpool",
       "http://placekitten.com/210/204",
-      "This is a new kitten entry",
+      "This is a new kitten entry. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore.",
       "Cat",
       "House",
       1,
@@ -30,7 +30,7 @@ export class AdopteesService {
     new Adoptees(
       "Murder Biscuit",
       "http://placekitten.com/250/250",
-      "A cat to beware of",
+      "A cat to beware of Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore.",
       "Cat",
       "Siamese",
       12,

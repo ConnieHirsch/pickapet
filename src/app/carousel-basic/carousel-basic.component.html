@@ -7,16 +7,27 @@
       <img
         [src]="adoptee.imagePath"
         alt="adoptable pet: {{ adoptee.name }}"
-        class="img-fluid rounded mx-auto d-block h-75"
+        class="img-fluid rounded mx-auto d-block h-100"
+        style="max-width: 100%;"
       />
       <div class="carousel-caption mb-5">
         <h4>{{ adoptee.name }}</h4>
       </div>
     </div>
     <div class="mx-auto mt-2" style="text-align: center;">
-      <p class="text-truncate mx-auto mt-3" style="max-width: 200px;">
+      <p class="text-truncate mx-auto mt-3" style="max-width: 100%;">
         {{ adoptee.description }}
       </p>
+      <!-- <textarea
+        name="desc"
+        id="desc"
+        cols="30"
+        rows="2"
+        disabled
+        class="mx-auto mt-3"
+      >
+        {{ adoptee.description }}</textarea
+      > -->
       <button
         class="btn btn-outline-success mx-auto mt-3"
         (click)="onPickAdoptee(i)"
