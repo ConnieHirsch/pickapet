@@ -28,6 +28,16 @@ export class AdopteesService {
       "http://www.constancehirsch.com/test.html?pet=Kitty"
     ),
     new Adoptees(
+      "Streaky SuperDog",
+      "http://place-puppy.com/200x195",
+      "Streaky dog, go for it, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore.",
+      "Dog",
+      "Hero",
+      2,
+      "Greater Derry Humane Society",
+      "http://www.constancehirsch.com/test.html?pet=Streaky"
+    ),
+    new Adoptees(
       "Murder Biscuit",
       "http://placekitten.com/250/250",
       "A cat to beware of Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore.",

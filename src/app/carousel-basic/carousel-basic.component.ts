@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from "@angular/core";
+
 import { Adoptees } from "../adoptees/adoptees.model";
 import { AdopteesService } from "../adoptees/adoptees.service";
 import { Subscription } from "rxjs";
