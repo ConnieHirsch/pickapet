@@ -1,7 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Subscription } from "rxjs";
+
 import { Shelter } from "../shared/shelter.model";
-import { ShelterListService } from './shelter-list.service';
-import { Subscription } from 'rxjs';
+import { ShelterListService } from "./shelter-list.service";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: "app-shelter-list",
@@ -12,16 +14,18 @@ export class ShelterListComponent implements OnInit, OnDestroy {
   shelters: Shelter[];
   private subscription: Subscription;
 
-  constructor(private shelterListService: ShelterListService) { }
+  constructor(
+    private shelterListService: ShelterListService,
+    public authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.shelters = this.shelterListService.getShelters();
-    this.subscription = this.shelterListService.shelterChanged
-      .subscribe(
-        (shelters: Shelter[]) => {
-          this.shelters = shelters;
-        }
-      );
+    this.subscription = this.shelterListService.shelterChanged.subscribe(
+      (shelters: Shelter[]) => {
+        this.shelters = shelters;
+      }
+    );
   }
 
   ngOnDestroy() {
