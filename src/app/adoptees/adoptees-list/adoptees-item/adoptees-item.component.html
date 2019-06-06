@@ -1,21 +1,25 @@
-<a style="cursor: pointer;"
+<a
+  style="cursor: pointer;"
   [routerLink]="[index]"
- routerLinkActive="active"
+  routerLinkActive="active"
   class="card clearfix"
-  >
-  <div class="pull-left">
+>
+  <div class="pull-center">
     <h4 class="card-heading" style="max-width: 80%;">{{ adoptee.name }}</h4>
-  <span class="pull-right">
-    <img src="{{ adoptee.imagePath }}"
-      alt="{{ adoptee.name }}"
-      title="{{ adoptee.name }}"
+    <span class="pull-center">
+      <img
+        src="{{ adoptee.imagePath }}"
+        alt="{{ adoptee.name }}"
+        title="{{ adoptee.name }}"
         class="img-responsive"
-      style="max-height: 150px;" />
-  </span>
+        style="max-height: 150px;"
+      />
+    </span>
     <p class="card-text">{{ adoptee.description }}</p>
-    <p class="card-text"> <strong>{{ adoptee.type }}</strong>: {{ adoptee.breed }} {{ adoptee.age }} years</p>
+    <p class="card-text">
+      <strong>{{ adoptee.type }}</strong
+      >: {{ adoptee.breed }} {{ adoptee.age }} years
+    </p>
     <p class="card-text">Available via {{ adoptee.shelter }}</p>
-
   </div>
-
 </a>
