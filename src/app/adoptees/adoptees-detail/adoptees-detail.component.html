@@ -31,15 +31,18 @@
     </p>
     <hr />
     <p class="card-text">{{ adoptee.description }}</p>
-    <p class="card-text">
-      Adoptable at <a href="{{ adoptee.url }}">{{ adoptee.shelter }} </a>
-    </p>
+    <p class="card-text">Adoptable at {{ adoptee.shelter }}</p>
   </div>
+  <button class="btn btn-primary" (click)="openSm(content)">
+    Launch your next step!
+  </button>
 </div>
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Contact The Shelter</h4>
+    <h4 class="modal-title" id="modal-basic-title">
+      Ready to take that next step?
+    </h4>
     <button
       type="button"
       class="close"
@@ -50,40 +53,32 @@
     </button>
   </div>
   <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <label for="dateOfBirth">Date of birth</label>
-        <div class="input-group">
-          <input
-            id="dateOfBirth"
-            class="form-control"
-            placeholder="yyyy-mm-dd"
-            name="dp"
-            ngbDatepicker
-            #dp="ngbDatepicker"
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6">
+          <img
+            src="{{ adoptee.imagePath }}"
+            alt="{{ adoptee.name }}"
+            style="max-height: 100px; max-width: 100px;"
+            class="img-responsive"
           />
-          <div class="input-group-append">
-            <button
-              class="btn btn-outline-secondary calendar"
-              (click)="dp.toggle()"
-              type="button"
-            ></button>
-          </div>
+        </div>
+        <div class="col-md-6">
+          <em>{{ adoptee.name }}</em> is available at {{ adoptee.shelter }}
         </div>
       </div>
-    </form>
+    </div>
   </div>
   <div class="modal-footer">
+    <a href="{{ adoptee.url }}" class="btn btn-success" role="button"
+      >Contact My Shelter</a
+    >
     <button
       type="button"
       class="btn btn-outline-dark"
       (click)="modal.close('Save click')"
     >
-      Save
+      Not today!
     </button>
   </div>
 </ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-  Launch demo modal
-</button>

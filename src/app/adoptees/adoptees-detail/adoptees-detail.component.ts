@@ -24,6 +24,9 @@ export class AdopteesDetailComponent implements OnInit {
     private modalService: NgbModal
   ) {}
 
+  openSm(content) {
+    this.modalService.open(content, { size: "sm" });
+  }
   ngOnInit() {
     //const id = this.route.snapshot.params['id'];
     this.route.params.subscribe((params: Params) => {
