@@ -78,14 +78,16 @@
         var x = document.URL;
         var queryString = location.search;
         var urlParams = new URLSearchParams(location.search);
+        var urlString =
+          "Your query parameter was <strong>'" + urlParams + "'</strong>";
         var cameFrom = document.referrer;
-        document.getElementById("demo").innerHTML =
-          "Your query parameter was <strong>'" +
-          urlParams +
-          "'</strong></br> " +
-          "You came from <strong>'" +
-          cameFrom +
-          "'</strong>";
+        if (cameFrom != "") {
+          cameString =
+            "</br> " + "You came from <strong>'" + cameFrom + "'</strong>";
+        } else {
+          cameString = "";
+        }
+        document.getElementById("demo").innerHTML = urlString + cameString;
       }
     </script>
   </body>
