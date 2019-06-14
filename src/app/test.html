@@ -9,36 +9,83 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
     />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
     <style>
       body {
         background-color: linen;
         font-size: 24px;
       }
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(233, 85, 85);
+        color: white;
+        text-align: center;
+        font-size: 15px;
+      }
+      #demo {
+        font-size: 18px;
+      }
+      .nav-link {
+        margin-right: 2px;
+      }
     </style>
-    <title>Test</title>
+    <title>Connie's Test Link Page</title>
   </head>
-  <body onload="myFunction()">
-    <div class="container my-auto" style="width:500px;">
+  <body onload="getThoseParams()">
+    <div class="container my-auto" style="max-width:500px;">
       <div class="row">
         <div class="col-md-12">
-          <h2>My Test Page</h2>
+          <h2>Connie's Test Link Page</h2>
           <p>
             If you are seeing this page, you came here using a test link that I
-            created to test my links and demonstrate how my code works in
-            practice
+            created to demonstrate how my code works in a 'live' situation.
           </p>
           <h3 id="demo"></h3>
         </div>
       </div>
+      <footer class="navbar navbar-nav footer">
+        <div>
+          <a
+            class="nav-item nav-link"
+            href="https://github.com/conniehirsch"
+            target="_blank"
+          >
+            <i class="fa fa-github"></i>
+          </a>
+          <a
+            class="nav-item nav-link"
+            href="https://twitter.com/conniehirsch"
+            target="_blank"
+          >
+            <i class="fa fa-twitter"></i>
+          </a>
+          Made with <i class="fa fa-heart"></i> by
+          <a href="http://www.constancehirsch.com">Constance Hirsch</a>
+        </div>
+      </footer>
     </div>
 
     <script>
-      function myFunction() {
+      function getThoseParams() {
         var x = document.URL;
         var queryString = location.search;
         var urlParams = new URLSearchParams(location.search);
+        var cameFrom = document.referrer;
         document.getElementById("demo").innerHTML =
-          "Your URL was '" + urlParams + "'";
+          "Your query parameter was <strong>'" +
+          urlParams +
+          "'</strong></br> " +
+          "You came from <strong>'" +
+          cameFrom +
+          "'</strong>";
       }
     </script>
   </body>

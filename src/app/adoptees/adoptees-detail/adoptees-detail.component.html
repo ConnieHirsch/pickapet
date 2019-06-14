@@ -59,7 +59,7 @@
           <img
             src="{{ adoptee.imagePath }}"
             alt="{{ adoptee.name }}"
-            style="max-height: 100px; max-width: 100px;"
+            style="max-height: 90%; max-width: 90%;"
             class="img-responsive"
           />
         </div>
@@ -70,7 +70,11 @@
     </div>
   </div>
   <div class="modal-footer">
-    <a href="{{ adoptee.url }}" class="btn btn-success" role="button"
+    <a
+      href="{{ adoptee.url }}"
+      class="btn btn-success"
+      role="button"
+      target="_blank"
       >Contact My Shelter</a
     >
     <button
