@@ -1,10 +1,10 @@
-# Pickapet -- Pet Adoption App
+# Pickapet: Pet Adoption App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
 ## About This Project
 
-My aid was to use Angular to create a full-stack web app, to work through the ground-up steps of creating an Angular project on my own, and to demonstrate my mastery of the platform, using mobile-first design with some of the nicer [Bootstrap-adapted-for-Angular](https://ng-bootstrap.github.io/#/home) functions.  It is a true single page application, using Angular's routing functions to load your screens with a minimum of server-side interaction.
+My aim was to use Angular to create a full-stack web app, to work through the ground-up steps of creating an Angular project on my own, and to demonstrate my mastery of the platform, using mobile-first design with some of the nicer [Bootstrap-adapted-for-Angular](https://ng-bootstrap.github.io/#/home) functions.  It is a true single page application, using Angular's routing functions to load your screens with a minimum of server-side interaction.
 
 The basic concept is to provide a showcase website for animals seeking adoption (yeah, like Tindr but for adorable animals) that a staff person would curate -- there is a full set of adoptee and shelter forms that interact with a Firebase back end.  Currently, the four entries in the app are hard-coded in the app as a 'starter set' to guard against accidental deletion.
 
@@ -39,7 +39,7 @@ As with the Adoptee page, it is just a listing of shelter entries, and also only
 
 ### About
 
-Currently full of *loren ipsum* verbiage... but every website needs to have an About/Contact!  Pretend for now it's explaining how the pets are carefully curated, hand-selected from the freshest boutique shelters and rescue groups, et cetera.
+Every website needs to have an About/Contact!  Pretend for now it's explaining how the pets are carefully curated, hand-selected from the freshest boutique shelters and rescue groups, et cetera -- meanwhile, I'm repeating the markdown explanation about this site, which seems to be a useful thing to do.
 
 ### Manage
 

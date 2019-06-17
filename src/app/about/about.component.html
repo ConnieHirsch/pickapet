@@ -1,14 +1,131 @@
 <div class="row">
-  <div class="col-sm-10 my-auto">
-    <h3>About Page</h3>
-    <div class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, blanditiis?</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias cupiditate deleniti architecto, accusamus veritatis consequuntur a recusandae dolorum unde? Architecto.</p>
-    <div class="lead">Lorem ipsum dolor sit amet.</div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis iusto qui accusamus adipisci? Consectetur odit ratione laudantium atque qui. Iste impedit modi quia rerum ipsa, optio asperiores? Minus accusantium sunt ipsa ipsum perferendis dolor adipisci earum exercitationem? Adipisci, libero ut dicta quas sapiente accusantium quae porro animi aperiam harum consequatur saepe qui vel similique autem!</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis quaerat at doloribus accusamus aperiam culpa a ipsum praesentium hic labore.</p>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At voluptatum suscipit ratione eum odio minima, commodi repellat. Eos assumenda, minima, labore minus aspernatur dolores ex illo excepturi illum nisi beatae!</p>
-    <div class="lead">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur!</div>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero inventore dolorum quas qui? Architecto aliquam numquam qui odit eius expedita earum quibusdam, nam autem blanditiis natus nostrum corporis illo itaque corrupti explicabo praesentium.</p>
+  <div class="col-sm-10 my-auto" style="padding-bottom: 50px;">
+    <h1>
+      <a id="Pickapet__Pet_Adoption_App_0"></a>Pickapet – Pet Adoption App
+    </h1>
+    <p>
+      This project was generated with
+      <a href="https://github.com/angular/angular-cli">Angular CLI</a> version
+      7.2.1.
+    </p>
+    <h2><a id="About_This_Project_4"></a>About This Project</h2>
+    <p>
+      My aim was to use Angular to create a full-stack web app, to work through
+      the ground-up steps of creating an Angular project on my own, and to
+      demonstrate my mastery of the platform, using mobile-first design with
+      some of the nicer
+      <a href="https://ng-bootstrap.github.io/#/home"
+        >Bootstrap-adapted-for-Angular</a
+      >
+      functions. It is a true single page application, using Angular’s routing
+      functions to load your screens with a minimum of server-side interaction.
+    </p>
+    <p>
+      The basic concept is to provide a showcase website for animals seeking
+      adoption (yeah, like Tindr but for adorable animals) that a staff person
+      would curate – there is a full set of adoptee and shelter forms that
+      interact with a Firebase back end. Currently, the four entries in the app
+      are hard-coded in the app as a ‘starter set’ to guard against accidental
+      deletion.
+    </p>
+    <h2><a id="The_Parts_Of_The_Project_10"></a>The Parts Of The Project</h2>
+    <h3><a id="Splash_Screen__Main_Tab_12"></a>Splash Screen / Main Tab</h3>
+    <p>
+      The entry screen for this app, featuring a carousel that gives you basic
+      adoptee information – a picture, a name, where they are available, and
+      depending on the size of your screen, the start of the entry description.
+      To find out more, you click on the <em>Learn More</em> button.
+    </p>
+    <p>
+      The carousel feature is powered by Angular. Behind the scenes on the
+      browser side, the data for the carousel is a JSON object shared between
+      Angular modules.
+    </p>
+    <h3><a id="Header_18"></a>Header</h3>
+    <p>
+      Collapses to a standard Hamburger icon for smaller screens. Note the
+      dropdown functionality for the <em>Manage</em> function. Code uses
+      Angular’s <em>router.navigate()</em> functionality to switch screens with
+      low overhead.
+    </p>
+    <h3><a id="Adoptees_Tab_22"></a>Adoptees Tab and Page</h3>
+    <p>
+      Here you see the featured pet that you have clicked on, or the complete
+      list of pets available, with the ability to read in full any description,
+      plus basic facts about them – breed, age and so on. The entries could be
+      easily made more elaborate with additional fields.
+    </p>
+    <p>
+      If you have an Admin role, you will be able to create, edit or delete pet
+      entries, including being able to draw shelter name and URL from the
+      Shelter listing, so you can only add entries from existing (permitted)
+      shelters.
+    </p>
+    <h3>
+      <a id="Adoptees_Detail_Launch_your_next_step_button_28"></a>Adoptees
+      Detail 'Launch your next step!&quot; Button
+    </h3>
+    <p>
+      This launches a modal screen (Bootstrap via Angular) that asks if you
+      really want to investigate the adoptable pet further, and in a
+      <em>working</em> version of the app would take you to the actual shelter
+      entry of the pet you’ve chosen to further pursue adoption.
+    </p>
+    <p>
+      Since this is just a <em>demo</em>, all the links I’ve supplied go to a
+      <em>demo</em> page on my own website, so you get the idea without
+      bothering anyone out in the real world of pet adoption.
+    </p>
+    <h3><a id="Shelters_34"></a>Shelters Tab and Page</h3>
+    <p>
+      As with the Adoptee page, it is just a listing of shelter entries, and
+      also only the administrator will be able to create, update and delete
+      entries – ideally it would be shelters that have agreed to have adoptable
+      pets featured in this app, or perhaps each shelter would curate its own
+      entries.
+    </p>
+    <h3><a id="About_39"></a>About Tab and Page</h3>
+    <p>
+      Every website needs to have an About/Contact! Pretend for now it's
+      explaining how the pets are carefully curated, hand-selected from the
+      freshest boutique shelters and rescue groups, et cetera -- meanwhile, I'm
+      repeating the markdown explanation about this site, which seems to be a
+      useful thing to do.
+    </p>
+    <h3><a id="Manage_43"></a>Manage Tab</h3>
+    <p>
+      If you really want to explore this (and if you’ve read this far, you may
+      as well) the ID and password are
+      <strong>test@test.com</strong> and <strong>password</strong>. (I just
+      wanted to make it easy for testing – the data this accesses is junk data
+      for testing only.) You can then <strong>Fetch Data</strong>, edit the
+      fetched data on the relevant pages (note that editing function buttons are
+      now available both for Adoptees and Shelters),
+      <strong>Save Data</strong> and then <strong>Logout</strong>.
+    </p>
+    <p>
+      Firebase is the current backend database, since I had recent experience
+      using it, but any database such as MySQL or MongoDB would be easily linked
+      instead. But since, this is a demo, it was nice to get some practice in
+      with Firebase.
+    </p>
+    <h3><a id="Footer_49"></a>Footer</h3>
+    <p>
+      It’s a footer, but I got to link in some of the Font Awesome glyphs and
+      make them play nicely with the Angular code.
+    </p>
+    <h2>
+      <a id="What_I_Learned_With_This_Project_53"></a>What I Learned With This
+      Project
+    </h2>
+    <p>
+      I got to take an Angular project from the first setup command to creating
+      modules, to sharing services between those modules, routing, CRUD
+      interactions, CSS styling that overrides Angular’s base CSS, put in screen
+      size reactivity, and produced an app that runs mobile-first but expands
+      gracefully for the bigger screens. And while occasionally I got frustrated
+      with a detail or two, I was able to figure out where I’d gone wrong and
+      largely enjoy making it.
+    </p>
   </div>
 </div>
