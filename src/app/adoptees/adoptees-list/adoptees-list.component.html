@@ -3,7 +3,10 @@
     <button
       class="btn btn-success"
       (click)="onNewAdoptee()"
-      *ngIf="authService.isAuthenticated()">New Adoptee</button>
+      *ngIf="authService.isAuthenticated()"
+    >
+      New Adoptee
+    </button>
   </div>
 </div>
 <hr />
@@ -11,7 +14,9 @@
   <div class="col-xs-12">
     <app-adoptees-item
       *ngFor="let adopteeChosen of adoptees; let i = index"
-        [adoptee]="adopteeChosen"
-        [index]="i"></app-adoptees-item>
+      [adoptee]="adopteeChosen"
+      [index]="i"
+    ></app-adoptees-item>
   </div>
+  <app-scroll-top></app-scroll-top>
 </div>

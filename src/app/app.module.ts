@@ -27,6 +27,7 @@ import { AboutComponent } from "./about/about.component";
 import { FooterComponent } from "./footer/footer.component";
 import { SplashComponent } from "./splash/splash.component";
 import { CarouselBasicComponent } from './carousel-basic/carousel-basic.component';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CarouselBasicComponent } from './carousel-basic/carousel-basic.componen
     AboutComponent,
     FooterComponent,
     SplashComponent,
-    CarouselBasicComponent
+    CarouselBasicComponent,
+    ScrollTopComponent
   ],
   imports: [
     NgbModule.forRoot(),
