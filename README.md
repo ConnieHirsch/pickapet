@@ -1,6 +1,6 @@
 # Pickapet: Pet Adoption App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.5.2.
 
 ## About This Project
 
@@ -40,6 +40,10 @@ As with the Adoptee page, it is just a listing of shelter entries, and also only
 ### About
 
 Every website needs to have an About/Contact!  Pretend for now it's explaining how the pets are carefully curated, hand-selected from the freshest boutique shelters and rescue groups, et cetera -- meanwhile, I'm repeating the markdown explanation about this site, which seems to be a useful thing to do.
+
+### Scroll To Top Button
+
+For long pages (especially small screens) it seemed necessary to have a To Top button appear when the user is far enough down the page to need it.  I was able to adapt a lovely example 'Scroll to top Button for Angular' (https://medium.com/@appl4e/scroll-to-top-button-for-angular-99ddeebb8c3a) by Apple Mahmood.
 
 ### Manage
 
